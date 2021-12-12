@@ -12,6 +12,7 @@
     tools:context=".CalculatriceActivity"
     tools:ignore="ExtraText">
 
+
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="match_parent"
@@ -40,6 +41,10 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#D6D6D6"
                 android:text="AC"
                 android:textSize="19sp" />
@@ -49,6 +54,10 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#D6D6D6"
                 android:onClick="setOperator"
                 android:text="+/-"
@@ -59,6 +68,10 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#D6D6D6"
                 android:onClick="setOperator"
                 android:text="%"
@@ -69,22 +82,35 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#F77402"
+                android:onClick="setOperator"
                 android:text="/"
                 android:textSize="19sp" />
+
+
+
         </TableRow>
 
         <TableRow
             android:layout_width="287dp"
             android:layout_height="30pt">
 
+
             <Button
                 android:id="@+id/bu7"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#D6D6D6"
-                android:onClick="setOperator"
+                android:onClick="addNumber"
                 android:text="7"
                 android:textSize="19sp" />
 
@@ -93,7 +119,12 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#D6D6D6"
+                android:onClick="addNumber"
                 android:text="8"
                 android:textSize="19sp" />
 
@@ -102,8 +133,12 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#D6D6D6"
-                android:onClick="setOperator"
+                android:onClick="addNumber"
                 android:text="9"
                 android:textSize="19sp" />
 
@@ -112,10 +147,16 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#F77402"
                 android:onClick="setOperator"
                 android:text="x"
                 android:textSize="19sp" />
+
+
         </TableRow>
 
         <TableRow
@@ -127,6 +168,10 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#D6D6D6"
                 android:onClick="addNumber"
                 android:text="4"
@@ -137,8 +182,12 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#D6D6D6"
-                android:onClick="setOperator"
+                android:onClick="addNumber"
                 android:text="5"
                 android:textSize="19sp" />
 
@@ -147,6 +196,10 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#D6D6D6"
                 android:onClick="addNumber"
                 android:text="6"
@@ -157,6 +210,10 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#F77402"
                 android:text="-"
                 android:onClick="setOperator"
@@ -172,6 +229,10 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#D6D6D6"
                 android:onClick="addNumber"
                 android:text="1"
@@ -182,8 +243,12 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#D6D6D6"
-                android:onClick="setOperator"
+                android:onClick="addNumber"
                 android:text="2"
                 android:textSize="19sp" />
 
@@ -192,8 +257,12 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#D6D6D6"
-                android:onClick="setOperator"
+                android:onClick="addNumber"
                 android:text="3"
                 android:textSize="19sp" />
 
@@ -202,7 +271,12 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
+                android:layout_marginRight="1pt"
+                android:layout_marginLeft="1pt"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="1pt"
                 android:background="#F77402"
+                android:onClick="addNumber"
                 android:text="+"
                 android:textSize="19sp" />
         </TableRow>
@@ -218,28 +292,38 @@
             android:layout_width="122dp"
             android:layout_height="30pt"
             android:layout_weight="2"
+            android:layout_marginRight="1pt"
+            android:layout_marginLeft="1pt"
+            android:layout_marginTop="1pt"
+            android:layout_marginBottom="1pt"
             android:background="#D6D6D6"
-            android:onClick="setOperator"
+            android:onClick="addNumber"
             android:text="0"
             android:textSize="19sp" />
 
         <Button
             android:id="@+id/budot"
-            android:layout_width="40pt"
+            android:layout_width="25pt"
             android:layout_height="30pt"
             android:layout_weight="1"
+            android:layout_marginRight="1pt"
+            android:layout_marginLeft="1pt"
+            android:layout_marginTop="1pt"
+            android:layout_marginBottom="1pt"
             android:background="#D6D6D6"
-            android:onClick="addNumber"
             android:text=","
             android:textSize="19sp" />
 
         <Button
             android:id="@+id/buEgal"
-            android:layout_width="30pt"
+            android:layout_width="25pt"
             android:layout_height="30pt"
             android:layout_weight="1"
+            android:layout_marginRight="1pt"
+            android:layout_marginLeft="1pt"
+            android:layout_marginTop="1pt"
+            android:layout_marginBottom="1pt"
             android:background="#F77402"
-
             android:onClick="setOperator"
             android:text="="
             android:textSize="19sp" />

@@ -15,7 +15,8 @@ public class CalculatriceActivity extends AppCompatActivity {
         PLUS("+"),
         MOINS("-"),
         FOIS("x"),
-        DIV("/");
+        DIV("/"),
+        POUR("%");
 
         private String name = "";
         Opera(String name){this.name = name;}
@@ -24,69 +25,123 @@ public class CalculatriceActivity extends AppCompatActivity {
 
 
     private EditText screen;
-    private int opera1=0;
-    private int opera2=0;
+    private double opera1=0;
+    private double opera2=0;
     private Opera operator=null;
     private boolean isOpera1=true;
+    private Button buClear;
+    private Button buEgal;
+    private Button bu8,bu1,bu2, bu5;
+    private Button bu3,bu4,bu6, bu7;
+    private Button bu9,bu0;
+    private View.OnClickListener addNumberListener;
+    private Calculator calcul;
+    private String  operat = "";
+    private boolean comp = false;
+    private double resul;
+    private boolean cal = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_calculatrice);
+        calcul = new Calculator();
 
         screen = (EditText) findViewById (R.id.screen);
-        Button btnEgal = (Button)findViewById(R.id.buEgal);
-        btnEgal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                compute();
-            }
-        });
 
-        Button btnClear = (Button)findViewById(R.id.buClear);
-        btnClear.setOnClickListener(new View.OnClickListener() {
+                //Methode 1
+                buClear = findViewById(R.id.buClear);
+        buClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                clear();
+                clear(view);
+                calcul.Clear();
             }
         });
+        //Methode 2
+        buEgal = findViewById(R.id.buEgal);
+        buEgal.setOnClickListener(this::onClick);
+        //Methode 3
+        addNumberListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addNumber(view);
+            }
+        };
+        bu1 = findViewById(R.id.bu1);
+        bu1.setOnClickListener(addNumberListener);
+        bu2 = findViewById(R.id.bu2);
+        bu2.setOnClickListener(addNumberListener);
+        bu3 = findViewById(R.id.bu3);
+        bu3.setOnClickListener(addNumberListener);
+        bu4 = findViewById(R.id.bu4);
+        bu4.setOnClickListener(addNumberListener);
+        bu5 = findViewById(R.id.bu5);
+        bu5.setOnClickListener(addNumberListener);
+        bu6 = findViewById(R.id.bu6);
+        bu6.setOnClickListener(addNumberListener);
+        bu7 = findViewById(R.id.bu7);
+        bu7.setOnClickListener(addNumberListener);
+        bu8 = findViewById(R.id.bu8);
+        bu8.setOnClickListener(addNumberListener);
+        bu9 = findViewById(R.id.bu9);
+        bu9.setOnClickListener(addNumberListener);
+        bu0 = findViewById(R.id.bu0);
+        bu0.setOnClickListener(addNumberListener);
+
     }
 
-    private void updateDisplay() {
-        int x=opera1;
+    private void Afficher() {
+        double x=opera1;
         if(!isOpera1) {
-            x=opera2;
-        }
+             screen.setText(String.valueOf(opera1) +" "+operat+" "+String.valueOf(opera2)); }
 
-        screen.setText(String.format("%9d",x));
+        else{
+                if(cal == true){
+                    screen.setText( String.valueOf(resul) );
+                }
+                else
+                    {
+                    screen.setText( String.valueOf(opera1) );
+                    }
+            }
     }
 
 
-    public void compute() {
+    public void compute(View v) {
         if(isOpera1) {
-            // do nothing
+
         } else {
             switch(operator) {
-                case PLUS  : opera1 = opera1 + opera2; break;
-                case MOINS : opera1 = opera1 - opera2; break;
-                case FOIS  : opera1 = opera1 * opera2; break;
-                case DIV   : opera1 = opera1 / opera2; break;
-                default : return; // do nothing if no operator
+                case PLUS : resul = this.calcul.addition(opera1,
+                        opera2).toDouble(); break;
+                case MOINS : resul = this.calcul.soustration(opera1,
+                        opera2).toDouble(); break;
+                case FOIS: resul = this.calcul.multiplication(opera1,
+                        opera2).toDouble(); break;
+                case DIV : resul = this.calcul.division(opera1,
+                        opera2).toDouble(); break;
+                case POUR: resul = this.calcul.reste(opera1,
+                        opera2).toDouble(); break;
+                default:
+                    return;
             }
 
             opera2 = 0;
             isOpera1 = true;
-            updateDisplay();
+            Afficher();
         }
     }
 
 
-    private void clear() {
+
+    private void clear(View v) {
         opera1 = 0;
         opera2 = 0;
         operator = null;
         isOpera1 = true;
-        updateDisplay();
+        Afficher();
     }
 
     public void setOperator(View v) {
@@ -100,22 +155,28 @@ public class CalculatriceActivity extends AppCompatActivity {
                 return;
         }
         isOpera1=false;
-        updateDisplay();
+        Afficher();
     }
 
 
-    public void addNumber(View v){
+            public void addNumber(View v){
         try {
             int val = Integer.parseInt(((Button)v).getText().toString());
             if (isOpera1) {
                 opera1 = opera1 * 10 + val;
-                updateDisplay();
+                Afficher();
             } else {
                 opera2 = opera2 * 10 + val;
-                updateDisplay();
+                Afficher();
             }
         }catch (NumberFormatException | ClassCastException e) {
             Toast.makeText(this, "Valeur erronée",Toast.LENGTH_LONG);
         }
     }
+
+    public void onClick(View view) {
+        compute(view);
+
+    }
+
 }
